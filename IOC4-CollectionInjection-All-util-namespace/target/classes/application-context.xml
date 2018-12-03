@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+	
+	<bean id="engineeringTeam" class="com.spring.ioc.beans.Team">
+		<constructor-arg name="members" ref="memberList"/>
+		<property name="tasks">
+			<util:set set-class="java.util.TreeSet" value-type="java.lang.String">
+				<value>Fix Bugs</value>
+				<value>Attend Scrum</value>
+				<value>Generate Reports</value>
+			</util:set>
+		</property>
+		<property name="assignedTasks">
+			<props>
+				<prop key="Susan">Fix Bugs</prop>
+				<prop key="George">Attend Scrum</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="businessUnit" class="com.spring.ioc.beans.BusinessUnit">
+		<constructor-arg name="projects">
+			<util:map map-class="java.util.TreeMap" key-type="java.lang.String" value-type="com.spring.ioc.beans.Team">
+				<entry key="engineeringTeam" value-ref="engineeringTeam"/>
+			</util:map>
+		</constructor-arg>
+		<property name="domainName" value="diagnostics"/>
+	</bean>
+	
+	<util:list id="memberList" list-class="java.util.LinkedList" value-type="java.lang.String">	
+		<value>Susan</value>
+		<value>Smith</value>
+		<value>George</value>
+	</util:list>
+</beans>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="travelAdvisor" class="com.spring.ioc.beans.TravelAdvisor" init-method="init" destroy-method="destroy">
+		<constructor-arg value="1.1,2.2"/>
+		<property name="transportMode" value="Car"/>
+		<property name="srcCoordinate" value="2.3,4.5"/>
+		<property name="destCoordinate" value="6.7,8.9"/>
+	</bean>
+	
+</beans>

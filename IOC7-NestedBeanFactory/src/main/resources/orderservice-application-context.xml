@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- <bean id="orderService" class="com.spring.ioc.beans.OrderService" autowire="constructor"/> -->
+	
+	<!-- ref parent -->
+	<!-- <bean id="orderService" class="com.spring.ioc.beans.OrderService">
+		<constructor-arg name="blueDartService">
+			<ref parent="courierService"/>
+		</constructor-arg>
+	</bean> -->
+	
+	<!-- ref bean -->
+	<!-- <bean id="orderService" class="com.spring.ioc.beans.OrderService">
+		<constructor-arg name="blueDartService">
+			<ref bean="courierService"/>
+		</constructor-arg>
+	</bean>
+	<bean id="courierService" class="com.spring.ioc.beans.BlueDartService"></bean> -->
+	
+	<bean id="orderService" class="com.spring.ioc.beans.OrderService">
+		<constructor-arg name="blueDartService" ref="courierService"/>
+	</bean>
+	
+</beans>

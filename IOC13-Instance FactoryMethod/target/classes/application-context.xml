@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="mapRenderer" class="com.spring.ioc.beans.MapRenderer">
+		<property name="googleService" ref="googleUSService"></property>
+		<!-- <property name="googleService" ref="googleIndiaService"></property> -->
+	</bean>
+	
+	<bean id="googleServiceLocator" class="com.spring.ioc.servicelocator.GoogleServiceLocator"/>
+	
+	<bean id="googleIndiaService" factory-bean="googleServiceLocator" factory-method="locateService"><!--class attr not reqd bcoz we cant create obj for googleservice-->
+		<constructor-arg value="IN"/> <!-- Parameter to factory method -->
+	</bean>
+	<bean id="googleUSService" factory-bean="googleServiceLocator" factory-method="locateService">
+		<constructor-arg value="US"/> <!-- Parameter to factory method -->
+	</bean>
+	
+</beans>

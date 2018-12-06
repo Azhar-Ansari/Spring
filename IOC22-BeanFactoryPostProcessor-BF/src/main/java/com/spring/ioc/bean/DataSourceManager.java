@@ -1,21 +1,28 @@
 package com.spring.ioc.bean;
 
 public class DataSourceManager {
-	private String driverclass;
 	private String url;
 	private String username;
 	private String password;
 
-	public void setDriverclass(String driverclass) {
-		this.driverclass = driverclass;
+	public String getUrl() {
+		return url;
 	}
 
 	public void setUrl(String url) {
 		this.url = url;
 	}
 
+	public String getUsername() {
+		return username;
+	}
+
 	public void setUsername(String username) {
 		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
 	}
 
 	public void setPassword(String password) {
@@ -24,7 +31,7 @@ public class DataSourceManager {
 
 	@Override
 	public String toString() {
-		return "DataSourceManager [driverclass=" + driverclass + ", url=" + url + ", username=" + username + ", password="
+		return "DataSourceManager [url=" + url + ", username=" + username + ", password="
 				+ password + "]";
 	}
 }

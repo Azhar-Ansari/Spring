@@ -5,7 +5,7 @@ import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.core.io.ClassPathResource;
 
-import com.spring.ioc.bean.DataSourceManager;
+import com.spring.ioc.dao.DbManager;
 
 
 public class Test {
@@ -14,7 +14,7 @@ public class Test {
 		ConfigurableListableBeanFactory beanFactory = new XmlBeanFactory(new ClassPathResource("application-context.xml"));
 		PropertyPlaceholderConfigurer ppc = beanFactory.getBean(PropertyPlaceholderConfigurer.class);
 		ppc.postProcessBeanFactory(beanFactory);
-		DataSourceManager dsSourceManager = beanFactory.getBean(DataSourceManager.class);
-		System.out.println(dsSourceManager);
+		DbManager dbManager = beanFactory.getBean(DbManager.class);
+		System.out.println(dbManager.getName(1));
 	}
 }

@@ -6,7 +6,7 @@
 	<!-- <bean id="blueDartService" class="com.spring.ioc.beans.BlueDartService"></bean> -->
 	<bean id="dtdcService" class="com.spring.ioc.beans.DTDCService"></bean>
 	
-	<alias name="dtdcService" alias="blueDartService"/><!-- alias for dtdc -->
+	<alias alias="blueDartService" name="dtdcService"/><!-- alias for dtdc -->
 	
 	<bean id="amazonOrderService" class="com.spring.ioc.beans.AmazonOrderService">
 		<property name="blueDartService" ref="blueDartService"/><!-- Using bluedart as an alias for dtdc -->

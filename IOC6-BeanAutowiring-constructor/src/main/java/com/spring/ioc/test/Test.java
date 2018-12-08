@@ -10,6 +10,6 @@ public class Test {
 	public static void main(String[] args) {
 		BeanFactory beanFactory = new XmlBeanFactory(new ClassPathResource("application-context.xml"));
 		OrderService orderService = beanFactory.getBean("orderService", OrderService.class);
-		orderService.deliverOrder();
+		System.out.println(orderService);
 	}
 }

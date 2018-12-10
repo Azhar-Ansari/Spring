@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean class="com.spring.ioc.bean.LoanCalculator" depends-on="cacheManager">
+		<property name="cache" ref="cache"/>
+	</bean>
+	<bean id="cacheManager" class="com.spring.ioc.bean.CacheManager">
+		<constructor-arg ref="cache"/>
+		<constructor-arg>
+			<list value-type="com.spring.ioc.accessor.CacheData">
+				<ref bean="cachePropData"/>
+			</list>
+		</constructor-arg>
+	</bean>
+	<bean id="cache" class="com.spring.ioc.bean.Cache" factory-method="getInstance"/>
+	<bean id="cachePropData" class="com.spring.ioc.bean.CachePropData">
+		<property name="key" value="cityriprop"/>
+	</bean>
+</beans>

@@ -2,7 +2,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-	<bean id="blueDartService" class="com.spring.ioc.beans.BlueDartService" autowire-candidate="false"></bean>
-	<bean id="dtdcService" class="com.spring.ioc.beans.DTDCService" autowire-candidate="false"></bean>
+	<bean id="blueDartService" class="com.spring.ioc.beans.BlueDartService"></bean>
+	<bean id="dtdcService" class="com.spring.ioc.beans.DTDCService"></bean>
 	<bean id="orderService" class="com.spring.ioc.beans.OrderService" autowire="constructor"/>
 </beans>

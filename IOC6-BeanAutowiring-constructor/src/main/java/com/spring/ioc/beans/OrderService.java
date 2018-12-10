@@ -17,11 +17,11 @@ public class OrderService {
 		this.blueDartService = blueDartService;
 	}
 
-	public OrderService(DTDCService dtdcService, BlueDartService blueDartService) {
+	/*public OrderService(DTDCService dtdcService, BlueDartService blueDartService) {
 		System.out.println("constructor called with dtdcService & blueDartService param");
 		this.dtdcService = dtdcService;
 		this.blueDartService = blueDartService;
-	}
+	}*/
 
 	public void setBlueDartService(BlueDartService blueDartService) {
 		this.blueDartService = blueDartService;

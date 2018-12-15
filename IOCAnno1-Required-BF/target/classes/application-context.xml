@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	<bean id="htmlMessageConverter" class="com.spring.ioc.beans.HtmlMessageConverter"/>
+	<bean id="pdfMessageConverter" class="com.spring.ioc.beans.PdfMessageConverter"/>
+	<bean id="messageWriter" class="com.spring.ioc.beans.MessageWriter">
+		<property name="messageConverterId" value="111"/>
+		<property name="messageConverter" ref="pdfMessageConverter"/>
+	</bean>
+	<context:annotation-config/>
+</beans>
